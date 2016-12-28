@@ -4,7 +4,6 @@ public class GenerateLIS
 {
 	public int[] generateLIS(int[] arr, int[] dp)
 	{
-		int length = 0;
 		int max = 0;
 		int index = 0;
 		
