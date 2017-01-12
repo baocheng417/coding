@@ -13,6 +13,7 @@ public class LCSE
 		char[] c2 = str2.toCharArray();
 		
 		int[][] dp = getDp(c1, c2);
+
 		int max = 0;
 		int end = 0;
 		
