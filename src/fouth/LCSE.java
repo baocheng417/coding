@@ -13,14 +13,30 @@ public class LCSE
 		char[] c2 = str2.toCharArray();
 		
 		int[][] dp = getDp(c1, c2);
+		char[] res = new char[dp[dp.length-1][dp[0].length-1]];
+		int index = res.length - 1;
 		
 		for(int i = dp.length-1; i >= 0; i--)
 		{
 			for(int j = dp[0].length-1; j >= 0; j--)
 			{
-				
+				if(i != 0 && dp[i][j] == dp[i-1][j])
+				{
+					i--;
+				}
+				if(j != 0 && dp[i][j] == dp[i][j-1])
+				{
+					j--;
+				}
+				else
+				{
+					res[index--] = c1[i];
+					i--;
+					j--;
+				}
 			}
 		}
+		return String.valueOf(res);
 	}
 	
 	public int[][] getDp(char[] c1, char[] c2)
